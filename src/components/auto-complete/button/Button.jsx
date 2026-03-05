@@ -1,9 +1,13 @@
 import React from 'react'
 import './style.css'
 
-function Button() {
+function Button({label, onClick = ()=>{}}) {
+
+  function handleClick(){
+    
+  }
   return (
-    <div>Button</div>
+    <button onClick={handleClick}>{label}</button>
   )
 }
 

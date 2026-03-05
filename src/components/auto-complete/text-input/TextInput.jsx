@@ -1,9 +1,13 @@
 import React from 'react'
 import './style.css'
 
-function TextInput() {
+function TextInput({value, onChange}) {
+
+  function handleChange(e){
+    onChange(e.target.value)
+  }
   return (
-    <div>TextInput</div>
+    <input type="text" value={value} onChange={handleChange}/>
   )
 }
 
