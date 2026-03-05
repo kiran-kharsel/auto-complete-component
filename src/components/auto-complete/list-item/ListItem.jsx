@@ -1,9 +1,11 @@
 import React from 'react'
 import './style.css'
 
-function ListItem() {
+import Button from '../button'
+
+function ListItem({suggestion}) {
   return (
-    <div>ListItem</div>
+    <Button label={suggestion}/>
   )
 }
 

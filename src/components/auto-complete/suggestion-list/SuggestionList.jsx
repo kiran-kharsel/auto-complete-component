@@ -1,9 +1,18 @@
 import React from 'react'
 import './style.css'
 
-function SuggestionList() {
+import ListItem from '../list-item'
+
+function SuggestionList({suggestions}) {
+
   return (
-    <div>SuggestionList</div>
+    <div>
+      {suggestions.map((suggestion) => {
+        return (
+          <ListItem key={suggestion} suggestion={suggestion}/>
+        )
+      })}
+    </div>
   )
 }
 
