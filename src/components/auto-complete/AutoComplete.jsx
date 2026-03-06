@@ -13,6 +13,10 @@ function AutoComplete({suggestions}) {
   };
 
 
+  //filter list based on query text
+  const filteredList = suggestions.filter((suggestion) => {
+    return suggestion.includes(query)
+  })
 
   return (
     <div className='autocomplete'>
@@ -22,7 +26,7 @@ function AutoComplete({suggestions}) {
       </div>
 
 
-      <SuggestionsList suggestions={suggestions}/>
+      <SuggestionsList suggestions={filteredList}/>
     </div>
   )
 }
