@@ -7,9 +7,15 @@ import SuggestionsList from './suggestion-list'
 
 function AutoComplete({suggestions}) {
   const [query, setQuery] = useState('');
+  const [showList, setShowList] = useState(false);
 
   function handleChange(value){
     setQuery(value)
+    if(value){
+      setShowList(true)
+    }else{
+      setShowList(false)
+    }
   };
 
 
@@ -26,7 +32,7 @@ function AutoComplete({suggestions}) {
       </div>
 
 
-      <SuggestionsList suggestions={filteredList}/>
+      {showList && <SuggestionsList suggestions={filteredList}/>}
     </div>
   )
 }
