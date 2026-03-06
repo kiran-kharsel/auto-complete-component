@@ -6,7 +6,7 @@ import ListItem from '../list-item'
 function SuggestionList({suggestions}) {
 
   return (
-    <div>
+    <div className='suggestion-list'>
       {suggestions.map((suggestion) => {
         return (
           <ListItem key={suggestion} suggestion={suggestion}/>
