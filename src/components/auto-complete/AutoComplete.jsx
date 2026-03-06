@@ -15,15 +15,14 @@ function AutoComplete({suggestions}) {
 
 
   return (
-    <div>
-      <div>
+    <div className='autocomplete'>
+      <div className='input-section'>
         <TextInput value={query} onChange={handleChange}/>
-        <Button label='cancel'/>
+        <Button label='❌'/>
       </div>
 
-      <div>
-        <SuggestionsList suggestions={suggestions}/>
-      </div>
+
+      <SuggestionsList suggestions={suggestions}/>
     </div>
   )
 }

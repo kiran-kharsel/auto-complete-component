@@ -1,0 +1,29 @@
+.autocomplete{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 300px;
+}
+
+.input-section{
+    background-color: white;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-section input{
+    height: 100%;
+    border: 0;
+    outline: 0;
+    background-color: white;
+    padding: 0;
+    width: 70%;
+}
+
+.input-section button{
+    background: transparent;
+    border-radius: 0;
+    border: 0;
+}
