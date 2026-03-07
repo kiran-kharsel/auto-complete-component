@@ -17,7 +17,11 @@ function AutoComplete({suggestions}) {
       setShowList(false)
     }
   };
-
+  
+  function handleClearInput(){
+    setQuery('')
+    setShowList(false)
+  }
 
   //filter list based on query text
   const filteredList = suggestions.filter((suggestion) => {
@@ -28,7 +32,7 @@ function AutoComplete({suggestions}) {
     <div className='autocomplete'>
       <div className='input-section'>
         <TextInput value={query} onChange={handleChange}/>
-        <Button label='❌'/>
+        <Button label='❌' onClick={handleClearInput}/>
       </div>
 
 
