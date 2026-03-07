@@ -7,20 +7,20 @@ import SuggestionsList from './suggestion-list'
 
 function AutoComplete({suggestions}) {
   const [query, setQuery] = useState('');
-  const [showList, setShowList] = useState(false);
+  const [showElement, setShowElement] = useState(false);
 
   function handleChange(value){
     setQuery(value)
     if(value){
-      setShowList(true)
+      setShowElement(true)
     }else{
-      setShowList(false)
+      setShowElement(false)
     }
   };
   
   function handleClearInput(){
     setQuery('')
-    setShowList(false)
+    setShowElement(false)
   }
 
   //filter list based on query text
@@ -32,11 +32,11 @@ function AutoComplete({suggestions}) {
     <div className='autocomplete'>
       <div className='input-section'>
         <TextInput value={query} onChange={handleChange}/>
-        <Button label='❌' onClick={handleClearInput}/>
+        {showElement && <Button label='❌' onClick={handleClearInput}/>}
       </div>
 
 
-      {showList && <SuggestionsList suggestions={filteredList}/>}
+      {showElement && <SuggestionsList suggestions={filteredList}/>}
     </div>
   )
 }
