@@ -3,9 +3,17 @@ import './style.css'
 
 import Button from '../button'
 
-function ListItem({suggestion}) {
+function ListItem({suggestion, onChange}) {
+
+  function handleClick(){
+    // set text in input
+    onChange(suggestion)
+    // hide list
+  }
+
+
   return (
-    <Button label={suggestion}/>
+    <Button label={suggestion} onClick={handleClick}/>
   )
 }
 

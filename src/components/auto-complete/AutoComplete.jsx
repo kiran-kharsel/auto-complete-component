@@ -36,7 +36,7 @@ function AutoComplete({suggestions}) {
       </div>
 
 
-      {showElement && <SuggestionsList suggestions={filteredList}/>}
+      {showElement && <SuggestionsList onChange={setQuery} suggestions={filteredList}/>}
     </div>
   )
 }
