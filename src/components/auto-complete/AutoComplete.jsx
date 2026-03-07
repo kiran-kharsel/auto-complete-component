@@ -7,20 +7,29 @@ import SuggestionsList from './suggestion-list'
 
 function AutoComplete({suggestions}) {
   const [query, setQuery] = useState('');
-  const [showElement, setShowElement] = useState(false);
+  const [showList, setShowList] = useState(false);
+  const [showCancelBtn, setShowCancelBtn] = useState(false);
 
   function handleChange(value){
     setQuery(value)
     if(value){
-      setShowElement(true)
+      setShowList(true)
+      setShowCancelBtn(true)
     }else{
-      setShowElement(false)
+      setShowList(false)
+      setShowCancelBtn(false)
     }
   };
   
   function handleClearInput(){
     setQuery('')
-    setShowElement(false)
+    setShowList(false)
+    setShowCancelBtn(false)
+  }
+
+  function handleSuggestionSelect(value){
+    setQuery(value)
+    setShowList(false)
   }
 
   //filter list based on query text
@@ -32,11 +41,11 @@ function AutoComplete({suggestions}) {
     <div className='autocomplete'>
       <div className='input-section'>
         <TextInput value={query} onChange={handleChange}/>
-        {showElement && <Button label='❌' onClick={handleClearInput}/>}
+        {showCancelBtn && <Button label='❌' onClick={handleClearInput}/>}
       </div>
 
 
-      {showElement && <SuggestionsList onChange={setQuery} suggestions={filteredList}/>}
+      {showList && <SuggestionsList  onChange={handleSuggestionSelect} suggestions={filteredList}/>}
     </div>
   )
 }

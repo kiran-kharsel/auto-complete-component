@@ -6,9 +6,7 @@ import Button from '../button'
 function ListItem({suggestion, onChange}) {
 
   function handleClick(){
-    // set text in input
     onChange(suggestion)
-    // hide list
   }
 
 
