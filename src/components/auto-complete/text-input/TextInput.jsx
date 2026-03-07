@@ -7,7 +7,7 @@ function TextInput({value, onChange}) {
     onChange(e.target.value)
   }
   return (
-    <input type="text" value={value} onChange={handleChange}/>
+    <input placeholder='search...' type="text" value={value} onChange={handleChange}/>
   )
 }
 
